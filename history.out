@@ -1,0 +1,87 @@
+    1  history -w
+    2  sudo hostnamectl set-hostname mephi-2026.domain.local
+    3  hostname
+    4  ping -c 4 8.8.8.8
+    5  ping -c 4 8.8.8.8 >~/ping.out
+    6  sudo dnf update -y
+    7  sudo dnf install -y nginx libcap-ng-utils
+    8  sudo dnf download tcpdump --destdir=/tmp
+    9  sudo rpm -ivh /tmp/tcpdump-*.rpm
+   10  dnf history >~/dnf.out
+   11  poweroff
+   12  sudo fdisk -l
+   13  sudo fdisk /dev/sdb
+   14  sudo mkfs.ext4 -L  MEPHI_WEB /dev/sdb1
+   15  sudo mkdir -p /mephi-web
+   16  sudo nano /etc/fstab
+   17  sudo mount -a
+   18  sudo systemctl daemon-reload
+   19  df -h | grep mephi-web
+   20  sudo systemctl enable --now nginx
+   21  journalctl -u nginx -b > ~/journalctl.out
+   22  sudo nkdir -p /data/mephi-2026
+   23  sudo mkdir -p /data/mephi-2026
+   24  sudo groupadd -g 4444 curators
+   25  sudo useradd -u 4401 -G curators mentor
+   26  sudo useradd -u 4401 -G curators teacher
+   27  sudo useradd -u 4402 -G curators teacher
+   28  sudo useradd -u 5501 user1
+   29  sudo useradd -u 5502 user2
+   30  sudo useradd -u 5503 user3
+   31  sudo groupadd devs
+   32  sudo usermod -aG devs user1
+   33  sudo usermod -aG devs user2
+   34  sudo usermod -aG devs user3
+   35  sudo chown root:devs /data/mephi-2026
+   36  sudo chmod 2770 /data/mephi-2026
+   37  sudo setfacl -d -m g:curators:r-x /data/mephi-2026
+   38  sudo dnf install -y acl
+   39  which setfacl
+   40  sudo setfacl -d -m g:curators:r-x /data/mephi-2026
+   41  sudo setfacl -d -m o::--- /data/mephi-2026
+   42  getcap /usr/sbin/tcpdump
+   43  which tcpdump
+   44  sudo getcap /usr/sbin/tcpdump
+   45  sudo dnf download tcpdump --destdir=/tmp
+   46  sudo rpm -ivh /tmp/tcpdump-*.rpm
+   47  sudo dnf install /tmp/tcpdump-4.99.5-1.red80.rpm
+   48  sudo dnf install /tmp/tcpdump-*.rpm
+   49  dnf history > ~/dnf.out
+   50  getcap /usr/sbin/tcpdump
+   51  sudo setcap cap_net_raw,cap_net_admin+ep /usr/sbin/tcpdump
+   52  getcap /usr/sbin/tcpdump
+   53  sudo -u user1 tcpdump -c 4
+   54  getenforce
+   55  sudo semanage fcontext -a -t httpd_sys_content_t "/mephi-web(/.*)?"
+   56  sudo dnf install -y policycoreutils-python-utils
+   57  sudo semanage fcontext -a -t httpd_sys_content_t "/mephi-web(/.*)?"
+   58  sudo restorecon -Rv /mephi-web
+   59  sudo usermod -L mentor
+   60  sudo usermod -L teacher
+   61  sudo chage -M 90 user1
+   62  sudo chage -M 90 user2
+   63  sudo chage -M 90 user3
+   64  sudo nano /etc/security/pwquality.conf
+   65  echo "Hello from student: 375013"
+   66  echo "Hello from student: 375013" | sudo tee /mephi-web/index.html
+   67* 
+   68  cat /mephi-web/index.html
+   69  sudo nano /etc/nginx/nginx.conf
+   70  sudo systemctl reastart nginx
+   71  sudo systemctl restart nginx
+   72  sudo nano /etc/nginx/nginx.conf
+   73  sudo systemctl restart nginx
+   74  sudo nginx -t
+   75  sudo nano /etc/nginx/nginx.conf
+   76  sudo nginx -t
+   77  sudo nano /etc/nginx/nginx.conf
+   78  sudo nginx -t
+   79  sudo nano /etc/nginx/nginx.conf
+   80  sudo nginx -t
+   81  sudo nano /etc/nginx/nginx.conf
+   82  sudo nginx -t
+   83  curl http://localhost
+   84  sudo systemctl resrart nginx
+   85  sudo systemctl restart nginx
+   86  curl http://localhost
+   87  history > ~/history.out

@@ -1,0 +1,9 @@
+Иденти | Командная строка                                                                                          | Дата и время     | Действия       | Изменен
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+     7 | install /tmp/tcpdump-4.99.5-1.red80.i686.rpm /tmp/tcpdump-4.99.5-1.red80.x86_64.rpm                       | 2026-11-21 01:11 | Install        |   12   
+     6 | install -y acl                                                                                            | 2026-11-21 01:06 | Install        |    1   
+     5 | install -y nginx libcap-ng-utils                                                                          | 2026-11-21 00:25 | Install        |    1   
+     4 | update -y                                                                                                 | 2026-11-21 00:22 | I, O, U        |  221 EE
+     3 | autoremove -y --setopt=metadata_expire=-1                                                                 | 2026-11-16 03:08 | Removed        |    7  <
+     2 | remove -y --setopt=metadata_expire=-1 spice-vdagent open-vm-tools qemu-guest-agent                        | 2026-11-16 03:06 | Removed        |    3 >E
+     1 |                                                                                                           | 2026-11-16 02:59 | Install        |  712 EE
